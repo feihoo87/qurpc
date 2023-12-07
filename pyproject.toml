@@ -1,0 +1,53 @@
+[build-system]
+requires = [ "setuptools", "wheel", "Cython", "numpy" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qurpc"
+license = {text = "GPLv3"}
+authors = [{name = "feihoo87", email = "feihoo87@gmail.com"}]
+maintainers = [{name = "feihoo87", email = "feihoo87@gmail.com"}]
+description = "RPC for QuLab"
+keywords = [
+   "RPC",
+   "QuLab"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">= 3.10"
+dependencies = [
+    "msgpack>=1.0.4",
+    "numpy>=1.22.4",
+    "pyzmq>=23.2.0"
+]
+dynamic = ["version"]
+
+[project.scripts]
+"qurpc" = "qurpc.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/feihoo87/qurpc"
+"Bug Reports" = "https://github.com/feihoo87/qurpc/issues"
+"Source" = "https://github.com/feihoo87/qurpc/"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "qurpc.version.__version__"}

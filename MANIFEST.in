@@ -1,0 +1,3 @@
+include src/*.h
+include qurpc/*.pyi
+include MANIFEST.in
